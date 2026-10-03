@@ -3,7 +3,7 @@
 > **Zero-dependency, route-aware URL tracking parameter stripper and query cleaner for Vue 3, Vue Router, and VitePress.**
 
 [![npm version](https://img.shields.io/npm/v/vue-url-cleaner.svg)](https://www.npmjs.com/package/vue-url-cleaner)
-[![license](https://img.shields.io/npm/l/vue-url-cleaner.svg)](https://github.com/gkucmierz/vue-url-cleaner/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/vue-url-cleaner.svg)](https://gitea.7u.pl/gkucmierz/vue-url-cleaner/src/branch/main/LICENSE)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/vue-url-cleaner)](https://bundlephobia.com/package/vue-url-cleaner)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](#)
 

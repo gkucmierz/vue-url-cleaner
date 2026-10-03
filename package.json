@@ -42,7 +42,7 @@
     "type": "git",
     "url": "https://gitea.7u.pl/gkucmierz/vue-url-cleaner.git"
   },
-  "homepage": "https://7u.pl",
+  "homepage": "https://gitea.7u.pl/gkucmierz/vue-url-cleaner",
   "peerDependencies": {
     "vue": ">=3.0.0",
     "vue-router": ">=4.0.0"
