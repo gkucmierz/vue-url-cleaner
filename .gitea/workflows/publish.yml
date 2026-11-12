@@ -1,39 +1,21 @@
-name: Test & Publish Package
+name: Test & Dual-Publish Package (vue-url-cleaner -> Gitea + NPM)
 
 on:
   push:
     branches:
       - main
+      - master
+    tags:
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   publish:
-    name: Publish Package (Gitea + NPM)
-    runs-on: self-hosted-pl
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-
-      - name: Run automated tests
-        run: npm test
-
-      # -------------- PUBLISH TO NPMJS.ORG ----------------
-      - name: Setup Node for NPM Registry
-        uses: actions/setup-node@v3
-        with:
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Publish to Native Global Registry (NPM)
-        run: npm publish --access public || echo "Version already published to NPM, skipping."
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
-      # -------------- PUBLISH TO GITEA.7U.PL --------------
-      - name: Setup Node for Gitea Packages
-        uses: actions/setup-node@v3
-        with:
-          registry-url: 'https://gitea.7u.pl/api/packages/gkucmierz/npm/'
-
-      - name: Publish to Internal Registry (Gitea)
-        run: npm publish || echo "Version already published to Gitea, skipping."
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.LOCAL_PACKAGE_REGISTRY }}
+    uses: gkucmierz/ci-workflows/.gitea/workflows/publish-package.yml@main
+    with:
+      runs_on: self-hosted-pl
+      run_tests: true
+      run_build: false
+      publish_private: true
+      publish_npmjs: true
+    secrets: inherit

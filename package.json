@@ -38,6 +38,9 @@
   ],
   "author": "Grzegorz Kućmierz <gkucmierz@gmail.com> (https://7u.pl)",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://gitea.7u.pl/gkucmierz/vue-url-cleaner.git"
